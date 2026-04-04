@@ -161,12 +161,43 @@
               <p class="text-[#79716B] font-ban">
                 আপনি এখনো কোন <span class="">Lesson Select</span> করেন ন
               </p>
-              <h2 class="text-[#292524] font-bold text-4xl mt-3">
+              <h2 class="text-[#292524] font-bold text-3xl md:text-4xl mt-3">
                 একটি Lesson Select করুন।
               </h2>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- spinning section -->
+      <section
+        id="spinning"
+        class="flex justify-center items-center hidden h-[10vh]"
+      >
+        <span class="loading loading-spinner loading-lg text-[#422AD5]"></span>
+      </section>
+
+      <!-- modal -->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="Word_detail_modal.showModal()">
+          open modal
+        </button> -->
+        <dialog
+          id="Word_detail_modal"
+          class="modal modal-bottom sm:modal-middle"
+        >
+          <div class="modal-box">
+            <div id="modal-container"></div>
+
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
 
       <!-- QNA section -->
@@ -214,39 +245,39 @@
           </div>
         </div>
       </section>
+    </main>
 
-      <footer class="mt-16 md:mt-28 border-t-2 border-[#FFEBEB]">
-        <div
-          class="max-w-[1760px] mx-auto px-2 py-10 md:py-20 flex flex-col items-center md:flex-row justify-between gap-16"
-        >
-          <div class="text-center md:text-left">
-            <div
-              class="flex justify-center md:justify-start items-center font-semibold"
-            >
-              <p>English</p>
-              <img class="" src="./assets/logo.png" alt="" />
-              <p class="font-ban font-medium">জানালা</p>
-            </div>
-            <h3 class="font-ban font-medium text-[20px] mt-5">
-              ইংরেজি শিখুন সহজে
-            </h3>
-            <p class="mt-2">Providing ED-Tech Applications since 2025</p>
+    <footer class="mt-16 md:mt-28 border-t-2 border-[#FFEBEB]">
+      <div
+        class="max-w-[1760px] mx-auto px-2 py-10 md:py-20 flex flex-col items-center md:flex-row justify-between gap-16"
+      >
+        <div class="text-center md:text-left">
+          <div
+            class="flex justify-center md:justify-start items-center font-semibold"
+          >
+            <p>English</p>
+            <img class="" src="./assets/logo.png" alt="" />
+            <p class="font-ban font-medium">জানালা</p>
           </div>
+          <h3 class="font-ban font-medium text-[20px] mt-5">
+            ইংরেজি শিখুন সহজে
+          </h3>
+          <p class="mt-2">Providing ED-Tech Applications since 2025</p>
+        </div>
 
-          <div>
-            <h2 class="font-semibold text-center md:text-left text-[#18181B]">
-              Follow us
-            </h2>
-            <div class="mt-2 flex gap-3 justify-center items-center">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-youtube"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-github"></i>
-            </div>
+        <div>
+          <h2 class="font-semibold text-center md:text-left text-[#18181B]">
+            Follow us
+          </h2>
+          <div class="mt-2 flex gap-3 justify-center items-center">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
           </div>
         </div>
-      </footer>
-    </main>
+      </div>
+    </footer>
 
     <script src="./script/script.js"></script>
   </body>
