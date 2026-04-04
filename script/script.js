@@ -16,7 +16,7 @@ const displayLevels = (loadData) => {
   for (let level of levels) {
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML = `
-                      <p onclick="loadLevelWorld(${level.level_no})" class='font-semibold text-[#422AD5] px-4 py-1 rounded-md border-2 border-[#422AD5] w-fit flex cursor-pointer items-center gap-2'><i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</P>
+                      <p id="lesson-btn-${level.level_no}" onclick="loadLevelWorld(${level.level_no})" class='font-semibold text-[#422AD5] px-4 py-1 rounded-md border-2 border-[#422AD5] w-fit flex cursor-pointer items-center gap-2 level'><i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</P>
     `;
 
     levelsContainer.append(btnDiv);
@@ -28,7 +28,23 @@ const loadLevelWorld = (id) => {
 
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayLevelWord(data.data));
+    .then((data) => {
+      removeActive();
+
+      const levelBtn = document.getElementById(`lesson-btn-${id}`);
+      // console.log(levelBtn);
+      levelBtn.classList.add("bg-[#422AD5]", "text-white");
+
+      displayLevelWord(data.data);
+    });
+};
+
+const removeActive = () => {
+  const allLevels = document.querySelectorAll(".level");
+  // console.log(allLevels);
+  allLevels.forEach((levelBtn) =>
+    levelBtn.classList.remove("bg-[#422AD5]", "text-white"),
+  );
 };
 
 const displayLevelWord = (words) => {
@@ -51,7 +67,7 @@ const displayLevelWord = (words) => {
   }
 
   words.forEach((word) => {
-    console.log(word);
+    // console.log(word);
     const wordDiv = document.createElement("div");
     wordDiv.innerHTML = `
             <div class="bg-white p-8 md:p-14 rounded-xl">
@@ -76,5 +92,5 @@ const displayLevelWord = (words) => {
 
     wordContainer.append(wordDiv);
   });
-  console.log(words);
+  // console.log(words);
 };
