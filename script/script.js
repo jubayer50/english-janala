@@ -35,6 +35,21 @@ const displayLevelWord = (words) => {
   const wordContainer = document.getElementById("word-container");
   wordContainer.innerHTML = "";
 
+  if (words.length === 0) {
+    wordContainer.innerHTML = `
+            <div class="text-center col-span-full py-5 space-y-4">
+              <img class="mx-auto" src="./assets/alert-error.png" alt="" />
+              <p class="text-[#79716B] font-ban">
+                এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+              </p>
+              <h2 class="text-[#292524] font-bold text-4xl">
+                নেক্সট Lesson এ যান
+              </h2>
+            </div>
+    `;
+    return;
+  }
+
   words.forEach((word) => {
     console.log(word);
     const wordDiv = document.createElement("div");
@@ -43,8 +58,8 @@ const displayLevelWord = (words) => {
               <div class="text-center space-y-6">
                 <h2 class="font-bold text-2xl md:text-3xl">${word.word}</h2>
                 <p class="font-medium text-lg md:text-xl">Meaning / Pronunciation</p>
-                <h2 class="font-semibold text-2xl md:text-3xl text-[#18181B] opacity-80">
-                  "${word.meaning} / ${word.pronunciation}"
+                <h2 class="font-semibold text-2xl md:text-3xl text-[#18181B] opacity-80 font-ban">
+                  "${word.meaning ? word.meaning : "No Found"} / ${word.pronunciation ? word.pronunciation : "No Found"}"
                 </h2>
               </div>
 
