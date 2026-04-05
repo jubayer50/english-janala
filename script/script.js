@@ -93,11 +93,11 @@ const displayLevelWord = (words) => {
                 </h2>
               </div>
 
-              <div onclick="leadWordDetails(${word.id})" class="mt-11 flex justify-between items-center">
-                <button class="btn">
+              <div class="mt-11 flex justify-between items-center">
+                <button onclick="leadWordDetails(${word.id})" class="btn">
                   <i class="fa-solid fa-circle-info"></i>
                 </button>
-                <button class="btn">
+                <button onclick="pronounceWord('${word.word}')" class="btn">
                   <i class="fa-solid fa-volume-high"></i></i>
                 </button>
               </div>
@@ -194,3 +194,9 @@ document.getElementById("btn-search").addEventListener("click", function () {
       displayLevelWord(filterWord);
     });
 });
+
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
