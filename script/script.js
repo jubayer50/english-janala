@@ -173,3 +173,24 @@ const createElement = (array) => {
   const htmlElement = array.map((el) => ` <span class='btn'>${el}</span>`);
   return htmlElement.join(" ");
 };
+
+// search function
+document.getElementById("btn-search").addEventListener("click", function () {
+  removeActive();
+
+  const valueElement = document.getElementById("search-input");
+  const SearchValue = valueElement.value.trim().toLowerCase();
+
+  console.log(SearchValue);
+
+  fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((res) => res.json())
+    .then((data) => {
+      const allWords = data.data;
+      const filterWord = allWords.filter((word) =>
+        word.word.trim().toLowerCase().includes(SearchValue),
+      );
+
+      displayLevelWord(filterWord);
+    });
+});
