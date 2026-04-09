@@ -18,3 +18,16 @@ This is an amazing project. All data comes through API fetch and displaying this
 - Find vocabulary by searching
 
 ---
+
+![EnglishJanala](https://github.com/user-attachments/assets/529c60f7-dc12-4b13-a6dc-6c6b9475bdad)
+
+##
+---
+
+<img width="1920" height="2527" alt="English" src="https://github.com/user-attachments/assets/995290ab-681f-4104-bae1-be447d5fd0a9" />
+
+##
+---
+
+
+<img width="1920" height="3278" alt="EnglishFull" src="https://github.com/user-attachments/assets/2f9d308c-953d-406d-af0c-69a64b3582eb" />
