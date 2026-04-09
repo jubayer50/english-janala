@@ -19,6 +19,10 @@ This is an amazing project. All data comes through API fetch and is displayed in
 
 ---
 
+## Repository and Live links:
+- Repository link: https://github.com/jubayer50/english-janala
+- Live link: https://jubayer50.github.io/english-janala/
+
 ![EnglishJanala](https://github.com/user-attachments/assets/529c60f7-dc12-4b13-a6dc-6c6b9475bdad)
 
 ##
